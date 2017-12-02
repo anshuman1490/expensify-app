@@ -10,6 +10,7 @@ import configureStore from './store/configureStore';
 import getVisibleExpenses from './selectors/expenses';
 import { addExpense } from './actions/expenses';
 import { setTextFilter, sortByAmount } from './actions/filters';
+import './firebase/firebase.js';
 
 const store = configureStore();
 
