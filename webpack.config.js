@@ -5,7 +5,7 @@ process.env.NODE_ENV=process.env.NODE_ENV|| 'development';
 
 if(process.env.NODE_ENV==='test'){
   require('dotenv').config({path:'.env.test'});
-} esle if(process.env.NODE_ENV==='developemt'){
+} else if(process.env.NODE_ENV==='developemt'){
   require('dotenv').config({path:'.env.development'});
 }
 
