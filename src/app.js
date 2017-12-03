@@ -8,25 +8,21 @@ import 'normalize.css/normalize.css';
 import './style/style.scss';
 import configureStore from './store/configureStore';
 import getVisibleExpenses from './selectors/expenses';
-import { addExpense } from './actions/expenses';
+import { startSetExpenses } from './actions/expenses';
 import { setTextFilter, sortByAmount } from './actions/filters';
 import './firebase/firebase.js';
 
 const store = configureStore();
 
-// store.subscribe(() => {
-//     const state = store.getState();
-//     const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-//     console.log(visibleExpenses);
-//   });
-
-//store.dispatch(setTextFilter('gas'));
-
 
 const Jsx = (
-    <Provider store={store}>
-        <AppRouter />
-    </Provider>
+	<Provider store={store}>
+		<AppRouter />
+	</Provider>
 );
 
-ReactDOM.render(Jsx, document.getElementById('app'));
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+
+store.dispatch(startSetExpenses()).then(() => {
+	ReactDOM.render(Jsx, document.getElementById('app'));
+});
