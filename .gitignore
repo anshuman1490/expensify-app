@@ -1,7 +1,9 @@
 node_modules/
-public\bundle.js
-public\bundle.js.map
+public/bundle.js
+public/bundle.js.map
 public\styles.js
 public\styles.js.map
 .env.development
 .env.test
+public\bundle.js
+public\bundle.js.map
