@@ -6,8 +6,8 @@ import ExpensesSummary from './ExpensesSummary';
 const ExpanseDashboardPage = () => (
 	<div>
 		<ExpensesSummary />
-		<ExpenseList />
 		<ExpenseListFilters />
-	</div>
+		<ExpenseList />
+		</div>
 );
 export default ExpanseDashboardPage;

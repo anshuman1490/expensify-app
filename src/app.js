@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter, { history } from './router/AppRouter';
 import { Provider } from 'react-redux';
-
+import { login, logout } from './actions/auth';
+import { firebase } from './firebase/firebase.js';
 
 import 'normalize.css/normalize.css';
 import './style/style.scss';
 import configureStore from './store/configureStore';
 import getVisibleExpenses from './selectors/expenses';
 import { startSetExpenses } from './actions/expenses';
-import { login, logout } from './actions/auth';
-import { firebase } from './firebase/firebase.js';
+import LoadingPage from './components/LoadingPage';
+
 
 const store = configureStore();
 
@@ -28,7 +29,7 @@ const renderApp = () => {
 	}
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user) => {
 	if (user) {
